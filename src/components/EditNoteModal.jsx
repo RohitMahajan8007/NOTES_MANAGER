@@ -34,8 +34,7 @@ const EditNoteModal = ({ note, onClose }) => {
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [showReminderInput, setShowReminderInput] = useState(false);
 
-  // Auto-save on close (or rely on explicit actions? Keep usually saves on close)
-  // We will save on close of the modal
+ 
 
   const handleSave = () => {
     updateNote(note.id, {
@@ -107,7 +106,7 @@ const EditNoteModal = ({ note, onClose }) => {
 
         <div className="modal-footer">
           <div className="modal-tools">
-            {/* Reminder */}
+            
             <div className="reminder-wrapper" style={{ position: "relative" }}>
               <button
                 className={`icon-btn small ${reminder ? "active" : ""}`}
@@ -128,7 +127,7 @@ const EditNoteModal = ({ note, onClose }) => {
               )}
             </div>
 
-            {/* Color */}
+        
             <div
               className="color-picker-wrapper"
               style={{ position: "relative" }}

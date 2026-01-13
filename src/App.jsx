@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const AppContent = () => {
-  // Search state lifted to Layout
+
   const [searchTerm, setSearchTerm] = useState("");
 
   return (

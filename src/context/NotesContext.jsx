@@ -58,7 +58,7 @@ export const NotesProvider = ({ children }) => {
   };
 
   const deleteNote = (id) => {
-    // Soft delete (trash)
+  
     updateNote(id, { isDeleted: true, isPinned: false, isArchived: false });
   };
 

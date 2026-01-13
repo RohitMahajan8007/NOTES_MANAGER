@@ -23,11 +23,7 @@ const Reminders = () => {
     <div className="dashboard">
       <NoteInput />
 
-      {/* 
-         We generally don't show "Pinned" section in Reminders in Google Keep. 
-         It just shows sorted by reminder time usually, or just a grid.
-         For simplicity, we'll just show the grid of reminder notes.
-      */}
+    
 
       <h6 className="section-label">UPCOMING</h6>
 

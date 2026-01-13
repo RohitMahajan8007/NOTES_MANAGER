@@ -48,15 +48,7 @@ const NoteCard = ({ note }) => {
 
   const handleReminderUpdate = (newReminder) => {
     updateNote(note.id, { reminder: newReminder });
-    // Don't necessarily close popup immediately if they want to edit, but often better to just set it.
-    // Here we'll just set it. The input change handles the updating via specific event or blur?
-    // Actually NoteInput uses separate check. Let's trigger update immediately on change or better,
-    // just stick to the pattern:
-    // We can't easily "Update on every keystroke" for date picker without separate save btn or debounce.
-    // NoteInput uses a local state `reminder` then saves on close.
-    // For NoteCard, we want to update the context immediately.
-    // But HTML5 date input is tricky.
-    // Let's use a local handler that updates context on change.
+   
   };
 
   return (
@@ -73,7 +65,7 @@ const NoteCard = ({ note }) => {
       <div className="note-card-content">
         <div className="note-header">
           <h3 className="note-title">{note.title}</h3>
-          {/* Only show Pin if not trash */}
+          
           {!note.isDeleted && (
             <button
               className={`icon-btn small pin-btn ${

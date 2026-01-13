@@ -21,7 +21,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   return (
     <aside className={`sidebar ${isOpen ? "open" : "closed"}`}>
-      {/* Mobile Header in Sidebar */}
+
       <div className="sidebar-header-mobile">
         <span className="sidebar-logo">Note Manager</span>
       </div>
@@ -38,7 +38,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         </NavLink>
       ))}
 
-      {/* Mobile Overlay */}
+     
       {isOpen && <div className="sidebar-overlay" onClick={onClose} />}
 
       <style>{`

@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
 
-    // Auto login after register
+    
     localStorage.setItem("currentUser", JSON.stringify(newUser));
     setUser(newUser);
     return { success: true };
@@ -62,12 +62,12 @@ export const AuthProvider = ({ children }) => {
 
     const updatedUser = { ...user, ...updates };
 
-    // Update in users array
+
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     const updatedUsers = users.map((u) => (u.id === user.id ? updatedUser : u));
     localStorage.setItem("users", JSON.stringify(updatedUsers));
 
-    // Update current user
+    
     localStorage.setItem("currentUser", JSON.stringify(updatedUser));
     setUser(updatedUser);
 

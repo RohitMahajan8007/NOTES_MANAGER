@@ -20,8 +20,7 @@
     0 2px 6px 2px rgba(0, 0, 0, 0.3);
   --input-bg: #525355;
 
-  /* Note Colors - tweaked for dark mode */
-  --color-white: #202124; /* Default dark bg */
+  --color-white: #202124; 
   --color-red: #5c2b29;
   --color-orange: #614a19;
   --color-yellow: #635d19;
@@ -64,7 +63,7 @@ textarea {
   color: var(--text-primary);
 }
 
-/* Scrollbar */
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -80,12 +79,12 @@ textarea {
   background: #80868b;
 }
 
-/* Utility to hide elements */
+
 .hidden {
   display: none !important;
 }
 
-/* App Layout */
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -109,12 +108,10 @@ textarea {
 
 @media (max-width: 600px) {
   .main-content {
-    padding: 16px 8px; /* Less padding on small screens */
+    padding: 16px 8px; 
   }
 }
 
-/* Authentication Pages */
-/* Authentication Pages - Dark Mode Override */
 .auth-container {
   display: flex;
   justify-content: center;
@@ -151,7 +148,7 @@ textarea {
 }
 
 .auth-input:focus {
-  border-color: #8ab4f8; /* Light blue for dark mode */
+  border-color: #8ab4f8; 
   box-shadow: 0 0 0 1px #8ab4f8;
 }
 
@@ -159,7 +156,7 @@ textarea {
   width: 100%;
   padding: 12px;
   background-color: #8ab4f8;
-  color: #202124; /* Dark text on light button */
+  color: #202124; 
   font-weight: 500;
   border-radius: 4px;
   transition: background-color 0.2s;

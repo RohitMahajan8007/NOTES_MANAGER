@@ -11,7 +11,7 @@ import {
 } from "react-icons/md";
 
 const COLORS = [
-  { name: "Default", hex: "#202124" }, // Dark background
+  { name: "Default", hex: "#202124" }, 
   { name: "Red", hex: "#5c2b29" },
   { name: "Orange", hex: "#614a19" },
   { name: "Yellow", hex: "#635d19" },
@@ -30,17 +30,17 @@ const NoteInput = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [color, setColor] = useState("#202124"); // Default to Dark BG
+  const [color, setColor] = useState("#202124"); 
   const [isPinned, setIsPinned] = useState(false);
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [reminder, setReminder] = useState("");
-  /* ... existing state ... */
+ 
   const [showReminderInput, setShowReminderInput] = useState(false);
-  const [image, setImage] = useState(null); // State for image
+  const [image, setImage] = useState(null); 
 
   const formRef = useRef(null);
   const textareaRef = useRef(null);
-  const fileInputRef = useRef(null); // Ref for file input
+  const fileInputRef = useRef(null); 
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -55,17 +55,17 @@ const NoteInput = () => {
 
   const handleClose = () => {
     if (title.trim() || content.trim() || image) {
-      // Check for image too
+    
       addNote({
         title,
         content,
         color: color === "#202124" ? "#202124" : color,
         isPinned,
         reminder,
-        image, // Add image to payload
+        image, 
       });
     }
-    // Reset
+
     setTitle("");
     setContent("");
     setColor("#202124");
@@ -74,10 +74,10 @@ const NoteInput = () => {
     setShowColorPicker(false);
     setReminder("");
     setShowReminderInput(false);
-    setImage(null); // Reset image
+    setImage(null); 
   };
 
-  // Auto-resize textarea
+
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
@@ -86,7 +86,7 @@ const NoteInput = () => {
     }
   }, [content, isExpanded]);
 
-  // Click outside listener
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (formRef.current && !formRef.current.contains(event.target)) {
@@ -100,7 +100,7 @@ const NoteInput = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isExpanded, title, content, color, isPinned, reminder]); // Dep array important to capture latest state
+  }, [isExpanded, title, content, color, isPinned, reminder]); 
 
   return (
     <div className="note-input-container">
@@ -113,7 +113,7 @@ const NoteInput = () => {
         }}
       >
         {!isExpanded ? (
-          /* COLLAPSED VIEW */
+          
           <div className="collapsed-view">
             <span className="collapsed-placeholder">Take a note...</span>
             <div className="collapsed-icons">
@@ -126,7 +126,7 @@ const NoteInput = () => {
             </div>
           </div>
         ) : (
-          /* EXPANDED VIEW */
+  
           <div className="expanded-view">
             <div className="note-input-header">
               <input
@@ -196,7 +196,7 @@ const NoteInput = () => {
                   className="color-picker-wrapper"
                   style={{ position: "relative" }}
                 >
-                  {/* ... color picker JSX ... */}
+      
                   {showColorPicker && (
                     <div className="color-palette">
                       {COLORS.map((c) => (
